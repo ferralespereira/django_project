@@ -1,6 +1,6 @@
-# This is a Python project
+# This is a Django project
 
-## Some Phyton commands:
+## Some Django commands:
 * To run project in local `python3 manage.py runserver`
 
 ## To Make DataBase by Models
