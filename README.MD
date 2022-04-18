@@ -11,3 +11,5 @@
 
 ## To reconfigurate a sercret key
 It is possible you need to configure (SECRET_KEY) value into settings.py file aim to protect this value at github. [To achieve it click here.](https://stackoverflow.com/questions/64208678/hiding-secret-key-in-django-project-on-github-after-uploading-project) 
+
+In case you need to create a new (SECRET_KEY). [Click here](https://tech.serhatteker.com/post/2020-01/django-create-secret-key/)
