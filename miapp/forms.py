@@ -3,12 +3,25 @@ from django import forms
 
 class FormArticle(forms.Form):
     title = forms.CharField(
-        label = "Titulo"
+        label      = "Titulo",
+        max_length = 40,
+        required   = False,
+        widget     = forms.TextInput(
+            attrs = {
+                'placeholder': 'Title',
+                'class': 'form-control'
+            } 
+        ) 
     )
 
     content = forms.CharField(
         label = "Contenido",
-        widget= forms.Textarea 
+        widget= forms.Textarea(
+            attrs = {
+                'placeholder': 'Leave a comment here',
+                'class': 'form-control'
+            } 
+        )  
     )
 
     public_options = [
