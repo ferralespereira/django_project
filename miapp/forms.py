@@ -1,8 +1,8 @@
 from django import forms
 
-class FormArticle(forms.form):
+class FormArticle(forms.Form):
     title = forms.CharField(
-        label = 'Titulo',
+        label = "Titulo"
     )
 
     content = forms.CharField(

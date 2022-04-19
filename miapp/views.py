@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from miapp.models import Article, Category
+from miapp.forms import FormArticle
 
 # Create your views here.
 # MVC Modelo Vista Controlador
@@ -87,4 +88,8 @@ def save_article(request):
 def create_article(request):
 
     return render(request, 'create_article.html')
+
+
+# def create_full_article(request):
+
 
