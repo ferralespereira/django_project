@@ -28,7 +28,7 @@ class FormArticle(forms.Form):
             } 
         ),
         validators=[
-            validators.MaxValueValidator('40', 'The content has a lot of words.')
+            validators.MaxLengthValidator(40, 'The content has a lot of words.'),
         ]  
     )
 

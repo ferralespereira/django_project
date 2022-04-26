@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from miapp.models import Article, Category
 from miapp.forms import FormArticle
+from django.contrib import messages
 
 # Create your views here.
 # MVC Modelo Vista Controlador
@@ -111,6 +112,9 @@ def create_full_article(request):
             )
 
             articulo.save()
+
+            # create flash messages
+            messages.success(request, f'A new article was create. Article: {articulo.id}')
             
             return redirect('articulos')
             # return HttpResponse(articulo.title + '-' + articulo.content + '-' + str(articulo.public))

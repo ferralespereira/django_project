@@ -8,6 +8,14 @@
 {% block content %}
     <h1>Articulos template</h1>
 
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert-success col-md-4 text-center rounded p-3">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+
     {{mi_variable}}
     <br/>
     {{nombre}}
