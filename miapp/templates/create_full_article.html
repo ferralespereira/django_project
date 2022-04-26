@@ -9,10 +9,17 @@
 {% block content %}
     <h1>Form to create article</h1>
 
+    {% if form.errors %}
+        <p class="col-md-4 alert-danger p-3 border text-center rounded">
+            There's errors into the form
+        </p>
+    {% endif %}
+
+
     <form class="col-md-4 p-4 border border-primary rounded" action="" method="POST">
         {% csrf_token %} 
 
-        {{ form }}
+        {{ form.as_p }}
         
         <button type="submit" class="btn btn-primary mt-3">Submit</button>
     </form>

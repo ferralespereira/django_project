@@ -111,9 +111,14 @@ def create_full_article(request):
             )
 
             articulo.save()
-
+            
             return redirect('articulos')
             # return HttpResponse(articulo.title + '-' + articulo.content + '-' + str(articulo.public))
+        else:
+
+            return render(request, 'create_full_article.html', {
+                'form': formulario
+            })
         
     else:
         formulario  = FormArticle()
