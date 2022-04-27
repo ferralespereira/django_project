@@ -11,6 +11,9 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f"{self.id} - {self.title} - {self.content} - Public:{self.public} - {self.created_at}"
+
 class Category(models.Model):
     name = models.CharField(max_length=110)
     description = models.CharField(max_length=250)
