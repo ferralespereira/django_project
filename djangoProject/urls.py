@@ -13,8 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from xml.dom.minidom import Document
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
 
 # importar mi app con mis vistas
 from miapp import views
@@ -35,3 +37,8 @@ urlpatterns = [
     path('create-article/', views.create_article, name="create_article"),
     path('create-full-article/', views.create_full_article, name="create_full_article")
 ]
+
+# settings to upload images
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
