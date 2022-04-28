@@ -2,3 +2,4 @@
 miapp/__pycache__/
 db.sqlite3
 djangoProject/__pycache__/
+media/articles/

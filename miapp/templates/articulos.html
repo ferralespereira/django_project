@@ -8,21 +8,33 @@
 {% block content %}
     <h1>Articulos template</h1>
 
+    
     {% if messages %}
-        {% for message in messages %}
-            <div class="alert-success col-md-4 text-center rounded p-3">
-                {{message}}
-            </div>
-        {% endfor %}
+    {% for message in messages %}
+    <div class="alert-success col-md-4 text-center rounded p-3">
+        {{message}}
+    </div>
+    {% endfor %}
     {% endif %}
-
+    
     {{mi_variable}}
     <br/>
     {{nombre}}
-
+    
     <ul>
     {% for articulo in articulos%}
-        <li>{{articulo.id}}-{{articulo.title}}
+        
+        <article class="article-item">
+        
+            {{articulo.id}}-{{articulo.title}}
+        
+            {% if articulo.image != "null" %}
+                <h4>{{articulo.image}}</h4>
+                <img src="{{articulo.image.url}}" class="img-thumbnail" width="150px"  />
+            {% endif %}
+
+        </article>
+
     {% endfor %}
     </ul>
 {% endblock %}
