@@ -38,6 +38,12 @@ urlpatterns = [
     path('create-full-article/', views.create_full_article, name="create_full_article")
 ]
 
+# setting admin panel title
+title = "Mi django project"
+admin.site.site_header = title
+admin.site.site_title = title
+admin.site.index_title = "Admin Panel"
+
 # settings to upload images
 if settings.DEBUG:
     from django.conf.urls.static import static
