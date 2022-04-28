@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from email.policy import default
 from django.db import models
 
@@ -7,7 +8,7 @@ class Article(models.Model):
     title = models.CharField(max_length=150)
     content = models.TextField()
     public = models.BooleanField(default=False)
-    image = models.ImageField(default='null')
+    image = models.ImageField(default='null', upload_to = "articles")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
